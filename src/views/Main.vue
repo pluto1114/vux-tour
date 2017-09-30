@@ -5,11 +5,8 @@
             
 
             <!-- remember to import BusPlugin in main.js if you use components: x-img and sticky -->
-            <transition @after-enter="$vux.bus && $vux.bus.$emit('vux:after-view-enter')" :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
-                <div>
-                    <router-view class="router-view"></router-view>
-                </div>
-                <!-- <router-view class="router-view"></router-view> -->
+            <transition  :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
+                <router-view class="router-view"></router-view>
             </transition>
 
             <tabbar class="vux-demo-tabbar" icon-class="vux-center" v-show="true" slot="bottom">
@@ -116,38 +113,7 @@ export default {
     overflow-x: hidden;
 }
 
-.vux-pop-out-enter-active,
-.vux-pop-out-leave-active,
-.vux-pop-in-enter-active,
-.vux-pop-in-leave-active {
-    will-change: transform;
-    transition: all 500ms;
-    height: 100%;
-    top: 46px;
-    position: absolute;
-    backface-visibility: hidden;
-    perspective: 1000;
-}
 
-.vux-pop-out-enter {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-}
-
-.vux-pop-out-leave-active {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-}
-
-.vux-pop-in-enter {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-}
-
-.vux-pop-in-leave-active {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-}
 
 .menu-title {
     color: #888;

@@ -94,7 +94,7 @@ i {
 
 .spot {
     .card-padding {
-        padding: 15px;
+        padding: 10px;
     }
 }
 
@@ -149,19 +149,19 @@ i {
 
         <div class="btns">
             <flexbox class="icon-flex">
-                <flexbox-item class="icon">
-                    <div><img src="../assets/img/globe.png"></div>
+                <flexbox-item class="icon" @click="onIconClick">
+                    <div @click="onIconClick"><img src="../assets/img/globe.png"></div>
                     花花世界
                 </flexbox-item>
-                <flexbox-item class="icon">
+                <flexbox-item class="icon" @click="onIconClick">
                     <div><img src="../assets/img/blimp.png"></div>
                     名胜古迹
                 </flexbox-item>
-                <flexbox-item class="icon">
+                <flexbox-item class="icon" @click="onIconClick">
                     <div><img src="../assets/img/cloud.png"></div>
                     游山玩水
                 </flexbox-item>
-                <flexbox-item class="icon">
+                <flexbox-item class="icon" @click="onIconClick">
                     <div><img src="../assets/img/sailboat.png"></div>
                     主题乐园
                 </flexbox-item>
@@ -214,9 +214,9 @@ i {
 
         <swiper v-model="tabIndex" :show-dots="false" :aspect-ratio="3.5">
             <swiper-item v-for="(x, index) in spots" :key="index">
-                <card class="spot" v-for="(x,i) of spots[index]" :key="i">
-                    <img slot="header" :src="x.src" style="width:100%;display:block;">
-                    <div slot="content" class="card-padding">
+                <card class="spot" v-for="(x,i) of spots[index]" :key="i" @on-click-header="onCardClick">
+                    <img slot="header" :src="x.src" style="width:100%;display:block;" @click="onCardClick">
+                    <div slot="content" class="card-padding" @click="onCardClick">
                         <p style="line-height:2em;">{{x.title}}</p>
                         <p style="font-size:0.9em;line-height:1.5em;">{{x.descp}}</p>
                         <p style="font-size:0.9em;color:#999;">票价：{{x.price}}</p>
@@ -331,8 +331,14 @@ export default {
         console.log(this.showAddress)
     },
     methods: {
+        onIconClick(){
+            this.$router.push({name:'SpotList'})
+        },
         onItemClick(index) {
 
+        },
+        onCardClick(){
+            this.$router.push({name:'SpotDetail'})
         },
         show(index) {
             console.log(index)

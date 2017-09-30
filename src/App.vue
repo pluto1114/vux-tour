@@ -1,12 +1,19 @@
 <template>
   <div id="app" style="height:100%;">
-    <router-view></router-view>
+    <transition :name="'fade'">
+      <keep-alive>
+      <router-view class="router-view"></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  computed:{
+    
+  }
 }
 </script>
 
@@ -25,7 +32,6 @@ body {
   background-color: #ffffff;
 }
 
-
 .c-gray {
   color: gray;
 }
@@ -34,17 +40,32 @@ body {
   font-size: 0.9em;
   color: gray;
 }
-.bar {
-    height: 10px;
-    background-color: #eee;
-}
 
+.bar {
+  height: 10px;
+  background-color: #eee;
+}
+.header {
+    position: fixed!important;
+    width: 100%;
+    z-index: 999;
+}
+.content{
+  margin-top: 46px;
+}
 .weui-media-box_appmsg .weui-media-box__hd {
   width: 100px!important;
   height: 60px!important;
 }
-
-
-
-
 </style>
+<style lang="less">
+
+.fade-enter-active{
+  transition: opacity .8s ease;
+}
+
+.fade-enter{
+  opacity: 0
+}
+</style>
+

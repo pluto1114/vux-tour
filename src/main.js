@@ -6,6 +6,8 @@ import App from './App'
 
 import router from './router'
 
+import  { ToastPlugin } from 'vux'
+Vue.use(ToastPlugin)
 
 FastClick.attach(document.body)
 

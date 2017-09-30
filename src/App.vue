@@ -31,7 +31,11 @@ body {
   overflow-x: hidden;
   background-color: #ffffff;
 }
-
+@media only screen{
+  html,body{
+    max-width:480px;
+  }
+}
 .c-gray {
   color: gray;
 }

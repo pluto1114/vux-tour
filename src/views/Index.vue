@@ -149,20 +149,20 @@ i {
 
         <div class="btns">
             <flexbox class="icon-flex">
-                <flexbox-item class="icon" @click="onIconClick">
+                <flexbox-item class="icon">
                     <div @click="onIconClick"><img src="../assets/img/globe.png"></div>
                     花花世界
                 </flexbox-item>
-                <flexbox-item class="icon" @click="onIconClick">
-                    <div><img src="../assets/img/blimp.png"></div>
+                <flexbox-item class="icon">
+                    <div @click="onIconClick"><img src="../assets/img/blimp.png"></div>
                     名胜古迹
                 </flexbox-item>
-                <flexbox-item class="icon" @click="onIconClick">
-                    <div><img src="../assets/img/cloud.png"></div>
+                <flexbox-item class="icon">
+                    <div @click="onIconClick"><img src="../assets/img/cloud.png"></div>
                     游山玩水
                 </flexbox-item>
-                <flexbox-item class="icon" @click="onIconClick">
-                    <div><img src="../assets/img/sailboat.png"></div>
+                <flexbox-item class="icon">
+                    <div @click="onIconClick"><img src="../assets/img/sailboat.png"></div>
                     主题乐园
                 </flexbox-item>
                 <div class="space"></div>
@@ -199,7 +199,7 @@ i {
                 <i class="fa fa-send-o"></i>攻略游记&nbsp;|&nbsp;
                 <span class="sub-title">用心推荐</span>
             </div>
-            <panel :list="notes" type="5"></panel>
+            <panel :list="notes" type="5" @click.native="$vux.toast.text('制作中...', 'middle')"></panel>
         </div>
         <div class="bar"></div>
         <div style="height:44px;">
@@ -269,7 +269,7 @@ export default {
                 fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
                 title: '粉红沙滩',
                 desc: '珀斯幅员辽阔是澳大利亚占地面积最大的城市，我对那里长草源于珀斯洛特尼斯岛上的短尾矮袋鼠（Quokka），它有胖嘟嘟的小脸蛋和随时随地看起来都在微笑的面容，深深被它萌萌哒颜值所吸引，而且他们也不害怕人类接近哦，看到我们人类，贪吃的它们会从树丛里面跳出来，想问人类要好吃的，如果一起自拍的话还会看镜头呢，所以尽管它们远在珀斯的洛特尼斯小岛上，尽管我晕船也想去和它们近距离接触一下，于是约上小伙伴，开始了我们8天的探索发现珀斯之旅。',
-                url: '/component/cell',
+                url: '/index',
                 meta: {
                     source: 'candy',
                     date: '2017-06-12',
@@ -280,7 +280,7 @@ export default {
                 title: '贝加尔湖',
                 desc: '半年前就与在内蒙古的红阳兄约好，夏日一同从满洲里自驾到贝加尔湖，看看没有雪的西伯利亚、没有蓝冰的贝加尔湖又是怎样的一个世界，有了靠谱的司机红阳带队，我完全没有做任何行程攻略，随着出行时间的一步步靠近，各种期待和好奇感来袭，为没去过俄罗斯感到期待，为战斗民族而感到小小的好奇，仔细想想最近关于这个国家的消息，是俄罗斯的航空公司，是普京，是世界杯，而我对于西伯利亚的了解算是非常浅薄，我不知道那边的城市是否繁忙，那里的小镇是否安详，那里的人们是否热情，就连自己这次出行的心情我都不是很了解。。',
                 url: {
-                    path: '/component/radio',
+                    path: '/index',
                     replace: false
                 },
                 meta: {

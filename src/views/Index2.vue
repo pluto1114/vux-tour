@@ -23,6 +23,7 @@
         padding:0 0.5em;
         .title {
             line-height: 2.4em;
+            white-space: nowrap;text-overflow:ellipsis; overflow:hidden;
         }
         .tags {
             font-size: 0.8em;
@@ -88,7 +89,7 @@
             <swiper-item>
                 <!-- <div class="ub"> -->
                 <div class="block" v-for="(x,i) of spots" :key="i" @click="onSpotClick">
-                    <x-img :default-src="defaultSrc" :src="x.src" :webp-src="`${x.src}?type=webp`" class="ximg-demo"></x-img>
+                    <x-img  :src="x.src" :webp-src="`${x.src}?type=webp`" class="ximg-demo"></x-img>
                     <div class="infos">
                         <p class="title">{{x.title}}</p>
                         <div class="tags ub">
@@ -129,7 +130,7 @@ export default {
                 { title: "咸阳茂陵2日游", tag: "名胜古迹", days: "2天", city: "咸阳", num: "802", src: "https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=704e7b8b054f78f0940692a118586130/e850352ac65c1038d8e02b1db4119313b17e8957.jpg" },
                 { title: "石家庄海洋公园2日游", tag: "亲子游乐", days: "2天", city: "石家庄", num: "773", src: "http://img.mp.itc.cn/upload/20160711/e35f2b8e970442a8a05c781aa9b5d194_th.jpg" },
                 { title: "西安大雁塔2日游", tag: "名胜古迹", days: "2天", city: "西安", num: "1152", src: "https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=29b20da028738bd4c021b533918b876c/91529822720e0cf324cc3c860c46f21fbe09aa90.jpg" },
-                { title: "茂名中国第一滩2日游", tag: "海边沙滩", days: "2天", city: "茂名", num: "279", src: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1505921477&di=5879131c7d78e6dcf57a1962e6358ea1&src=http://file21.mafengwo.net/M00/8F/F5/wKgB3FIMu2CAIiueAA1yWlpuWQo35.rbook_comment.w600_h400.jpeg" },
+                { title: "茂名中国第一滩2日游", tag: "海边沙滩", days: "2天", city: "茂名", num: "279", src: "http://p1.cncnimg.cn/jdpic/3/2047_m.jpg" },
                 { title: "咸阳茂陵2日游", tag: "名胜古迹", days: "2天", city: "咸阳", num: "802", src: "https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=704e7b8b054f78f0940692a118586130/e850352ac65c1038d8e02b1db4119313b17e8957.jpg" },
                 { title: "石家庄海洋公园2日游", tag: "亲子游乐", days: "2天", city: "石家庄", num: "773", src: "http://img.mp.itc.cn/upload/20160711/e35f2b8e970442a8a05c781aa9b5d194_th.jpg" },
             ],
